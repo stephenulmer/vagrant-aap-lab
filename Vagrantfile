@@ -12,14 +12,14 @@ penv = { 'BUNDLE_DIR'   => "/export/bundles",
          'AAP_PASSWORD' => "redhat" }
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "slu/rhel-9.4"
+  config.vm.box = "slu/rhel-9.4+ansible_core"
   config.vm.box_check_update = false
   config.vm.hostname = vm_name + ".localdomain"
   config.vm.define vm_name
 
   config.vm.provider "parallels" do |prl|
     prl.name = vm_name
-    prl.update_guest_tools = true
+    prl.update_guest_tools = false
     ## Additional drive for GPFS file system
     #prl.customize ["set", :id, "--device-add", "hdd", "--size", "5120", "--iface", "scsi"]
   end
