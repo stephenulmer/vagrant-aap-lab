@@ -12,8 +12,8 @@ penv = { 'BUNDLE_DIR'   => "/export/bundles",
          'AAP_PASSWORD' => "redhat" }
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "slu/rhel-9.4+ansible_core"
-  config.vm.box_url = "https://filedn.com/l5sQTlB8iglSMQibt69Jdj8/boxes/slu-rhel9.4+ansible_core.json"
+  config.vm.box = "slu/rhel-9.4.ansible"
+  config.vm.box_url = "https://filedn.com/l5sQTlB8iglSMQibt69Jdj8/boxes/slu-rhel-9.4.ansible.json"
   config.vm.box_check_update = false
   config.vm.hostname = vm_name + ".localdomain"
   config.vm.define vm_name
